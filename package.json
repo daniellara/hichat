@@ -1,0 +1,32 @@
+{
+  "name": "hichat",
+  "version": "1.0.0",
+  "description": "Chat application using socket.io",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": "8.1.2."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniellara/hichat.git"
+  },
+  "keywords": [
+    "real-time",
+    "chat",
+    "node",
+    "socketio"
+  ],
+  "author": "Daniel Lara <daniel.lara.diezma@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniellara/hichat/issues"
+  },
+  "homepage": "https://github.com/daniellara/hichat#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
