@@ -16,9 +16,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 io.on('connection', (socket) => {
     console.log('New user connected');
 
-    socket.emit('welcomeMessage', utils.generateMessage('Admin', 'Welcome to Hi-Chat!'));
+    socket.emit('newMessage', utils.generateMessage('Admin', 'Welcome to Hi-Chat!'));
 
-    socket.broadcast.emit('welcomeMessage', utils.generateMessage('Admin', 'An user has joined to Hi-Chat!'));
+    socket.broadcast.emit('newMessage', utils.generateMessage('Admin', 'An user has joined to Hi-Chat!'));
 
     socket.on('createMessage', (message) => {
         console.log('New message received:', message);
