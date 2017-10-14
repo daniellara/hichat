@@ -8,16 +8,15 @@
     <body>
         <p>Hi-chat application</p>
 
-        <script src="/socket.io/socket.io.js"></script>
-        <script>
-            var socket = io();
-            socket.on('connect', () => {
-                console.log('Connected to server');
-            });
+        <ol id="messages"></ol>
 
-            socket.on('disconnect', () => {
-                console.log('Bye bye...');
-            })
-        </script>
+        <form id="message-form">
+            <input name="message" type="text" placeholder="Enter the text..."/>
+            <button>Send</button>
+        </form>
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/libs/jquery-3.2.1.min.js"></script>
+        <script src="/js/index.js"></script>
     </body>
 </html>
