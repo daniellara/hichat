@@ -20,13 +20,19 @@ io.on('connection', (socket) => {
 
     socket.broadcast.emit('newMessage', utils.generateMessage('Admin', 'An user has joined to Hi-Chat!'));
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message, callback) => {
         console.log('New message received:', message);
         io.emit('newMessage', utils.generateMessage(message.from, message.text));
+        callback();
+    });
+
+    socket.on('createLocationMessage', (coords) => {
+        io.emit('newLocationMessage', utils.generateLocationMessage('Admin', coords.latitude, coords.longitude));
     });
 
     socket.on('disconnect', () => {
         console.log('User disconnected');
+        io.emit('newMessage', utils.generateMessage('Admin', 'An user has disconnected.'));
     });
 });
 
